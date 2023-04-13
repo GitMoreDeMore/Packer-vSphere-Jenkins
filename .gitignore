@@ -1,8 +1,13 @@
 # Cache objects
 packer_cache/
 
+#Credentials
+*auto.pkrvars.hcl
+
 # Crash log
 crash.log
 
 # For built boxes
 *.box
+
+.DS_Store
