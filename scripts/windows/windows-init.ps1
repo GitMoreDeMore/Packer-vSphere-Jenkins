@@ -20,6 +20,3 @@ Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
 Write-Output "Restarting Windows Remote Management service..."
 Set-Service winrm -startuptype "auto"
 Restart-Service winrm
-
-# Disable IPv6
-Disable-NetAdapterBinding -Name 'Ethernet0' -ComponentID 'ms_tcpip6'

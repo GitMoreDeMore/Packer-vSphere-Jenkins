@@ -46,5 +46,12 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server" 
 Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 0
 Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
 
+# Install .NET
+Install-WindowsFeature Net-Framework-Core
+Install-WindowsFeature NET-Framework-Features
+Install-WindowsFeature NET-Framework-45-Core
+Install-WindowsFeature NET-Framework-45-Features
+Install-WindowsFeature Failover-Clustering
+
 # Disable IPv6
 Disable-NetAdapterBinding -Name 'Ethernet0' -ComponentID 'ms_tcpip6'

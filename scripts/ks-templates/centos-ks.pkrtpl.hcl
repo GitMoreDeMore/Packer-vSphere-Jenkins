@@ -20,7 +20,8 @@ bootloader --append=" crashkernel=auto" --boot-drive=sda
 # Partition clearing information
 zerombr
 clearpart --all --initlabel
-part /boot/efi --fstype=efi --ondisk=sda --grow
+part /boot/efi --fstype=efi --ondisk=sda --size 511
+part /boot --fstype=ext4 --ondisk=sda --size 511
 part swap --fstype=swap --ondisk=sdb --size=16383
 part / --fstype=ext4 --ondisk=sdc --size=16383
 part /var --fstype=ext4 --ondisk=sdd --size=16383
