@@ -26,9 +26,7 @@ zerombr
 clearpart --all --initlabel
 part /boot/efi --fstype=efi --ondisk=sda --size 512 --fsoptions="umask=0077,shortname=winnt"
 part /boot --fstype=ext4 --ondisk=sda --size 512
-part / --fstype=ext4 --ondisk=sda --size=14335
-part swap --fstype=swap --ondisk=sdb --size=15359
-part /var --fstype=ext4 --ondisk=sdc --size=15359
+part / --fstype=ext4 --ondisk=sda --size=31700
 
 ### Modifies the default set of services that will run under the default runlevel.
 services --enabled=sshd

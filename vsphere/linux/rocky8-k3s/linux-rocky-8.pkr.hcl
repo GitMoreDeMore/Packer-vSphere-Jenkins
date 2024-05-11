@@ -45,7 +45,7 @@ source "vsphere-iso" "linux-rocky" {
 
   iso_paths = local.iso_paths
   cd_content = {
-    "/ks.cfg" = templatefile("../../../scripts/ks-templates/rocky-ks.pkrtpl.hcl", {
+    "/ks.cfg" = templatefile("../../../scripts/ks-templates/rocky-k3s-ks.pkrtpl.hcl", {
       build_password = var.build_password
     })
   }
@@ -72,7 +72,7 @@ build {
   sources = ["source.vsphere-iso.linux-rocky"]
 
   provisioner "shell" {
-    scripts       = ["../../../scripts/linux/linux-prep.sh","../../../scripts/linux/addsshkeys.sh"]
+    scripts       = ["../../../scripts/linux/linux-prep.sh","../../../scripts/linux/k3s-prep.sh","../../../scripts/linux/addsshkeys.sh"]
     pause_before = "10s"
     timeout      = "10s"
   }

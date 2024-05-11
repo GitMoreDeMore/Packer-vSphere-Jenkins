@@ -1,5 +1,5 @@
 variable "template_name" {
-  default = "rocky8-template"
+  default = "rocky8-k3s-template"
 }
 
 variable "vsphere_server" {}
@@ -29,5 +29,5 @@ variable "vsphere_network" {}
 variable "vsphere_folder" {}
 
 variable "storage" {
-  default = ["16384", "15360", "15360"]
+  default = ["32768"]
 }
